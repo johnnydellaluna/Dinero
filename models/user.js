@@ -1,52 +1,41 @@
-// Dependencies
-// =============================================================
-
-// This may be confusing but here Sequelize (capital) references the standard library
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/config.json");
+module.exports = function(sequelize, DataTypes) {
 
 // Creates a model that matches up with DB
 var User = sequelize.define("user", {
   first_name: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   last_name: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   username: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   password: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   available_amount: {
-    type: Sequelize.INTEGER
+    type: DataTypes.INTEGER
   },
   emergency_amount: {
-    type: Sequelize.INTEGER
+    type: DataTypes.INTEGER
   },
   addin_name: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   addin_amount: {
-    type: Sequelize.INTEGER
+    type: DataTypes.INTEGER
   },
   fav_stock_name: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   fav_stock_current_value: {
-    type: Sequelize.INTEGER
-  },
-  body: {
-    type: Sequelize.STRING
+    type: DataTypes.INTEGER
   }
-}, {
-  timestamps: false
+},{
+    timestamps: false
 });
 
-// Syncs with DB
-User.sync();
+return User
 
-
-module.exports = User;
+};

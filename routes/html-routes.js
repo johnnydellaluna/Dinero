@@ -1,5 +1,5 @@
-// Dependencies
-// =============================================================
+// var db = require("../models");
+
 var path = require("path");
 
 // Routes
@@ -11,5 +11,3 @@ module.exports = function(app) {
   });
 
 };
-
-module.exports = Index
