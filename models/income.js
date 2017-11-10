@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Expenses = sequelize.define("Expenses", {
+  var Income = sequelize.define("Income", {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1,30]
       }
     },
-    catagory: {
+    type: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -16,14 +16,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1,30]
       }
     },
-    amount_due: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        isNumeric: true
-      }
-    }
-    due_date: {
+    amount: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
@@ -35,14 +28,14 @@ module.exports = function(sequelize, DataTypes) {
     freezeTableName: true
   });
 
-  Expenses.associate = function(models) {
-    // We're saying that a Expenses should belong to an Author
-    // A Expenses can't be created without an Author due to the foreign key constraint
-    Expenses.belongsTo(models.User, {
+  Income.associate = function(models) {
+    // We're saying that a Income should belong to an Author
+    // A Income can't be created without an Author due to the foreign key constraint
+    Income.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
     });
   };
-  return Expenses;
+  return Income;
 };
