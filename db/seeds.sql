@@ -1,21 +1,8 @@
-INSERT INTO available_money (available_amount) VALUES (5000);
+USE dinero_db;
 
-INSERT INTO categories (category_name) VALUES ("Food");
-INSERT INTO categories (category_name) VALUES ("Health");
-INSERT INTO categories (category_name) VALUES ("Rent");
-INSERT INTO categories (category_name) VALUES ("Phone");
+INSERT INTO user (first_name, last_name, username, password, available_amount, emergency_amount, addin_name, addin_amount, fav_stock_name, fav_stock_current_value) VALUES ("Johnny", "Dellaluna", "jdl123", "password", 5000, 500, "Birthday Gift", 100, "Bitcoin", 7065);
 
-INSERT INTO cards_cash (card_name, spent_amount) VALUES ("American Express", 50);
-INSERT INTO cards_cash (card_name, spent_amount) VALUES ("Discover", 60);
-INSERT INTO cards_cash (card_name, spent_amount) VALUES ("Mastercard", 300);
-INSERT INTO cards_cash (card_name, spent_amount) VALUES ("Cash", 45);
-
-INSERT INTO emergency
--- A couple of ways we can handle this. We can have whenever the user puts in an available_amount in the available_money table, 15% (or some other percentage) is automatically removed and placed in emergency,
--- therefore, the available_amount will always be manipulated by the system. OR we can have the number on screen without removing from the table, alerting the user that this is a RECOMMENDED AMOUNT to not go under.
-
-INSERT INTO additional_income (addin_name, addin_amount) VALUES ("Birthday", 100);
-INSERT INTO additional_income (addin_name, addin_amount) VALUES ("DraftKings", 25);
--- These values should add automatically into available_money
-
-INSERT INTO bitcoin (current_value) VALUES (7065);
+INSERT INTO expenses (card_name, category_name, spent_amount) VALUES ("American Express", "Food", 50);
+INSERT INTO expenses (card_name, category_name, spent_amount) VALUES ("Discover", "Health", 60);
+INSERT INTO expenses (card_name, category_name, spent_amount) VALUES ("Mastercard", "Rent", 300);
+INSERT INTO expenses (card_name, category_name, spent_amount) VALUES ("Cash", "Phone", 45);
