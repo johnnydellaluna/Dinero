@@ -7,20 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/johnnydellaluna/Dinero.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/johnnydellaluna/Dinero/issues"
-  },
-  "homepage": "https://github.com/johnnydellaluna/Dinero#readme",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "mysql2": "^1.4.2",
-    "sequelize": "^4.22.5"
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mysql2": "^1.3.6",
+    "sequelize": "^4.3.1"
   }
 }
