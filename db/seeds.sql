@@ -1,21 +1,13 @@
-INSERT INTO available_money (available_amount) VALUES (5000);
+USE dinero_db;
 
-INSERT INTO categories (category_name) VALUES ("Food");
-INSERT INTO categories (category_name) VALUES ("Health");
-INSERT INTO categories (category_name) VALUES ("Rent");
-INSERT INTO categories (category_name) VALUES ("Phone");
+INSERT INTO user (first_name, last_name, username, password, budget, emergency) VALUES ("Nate", "Spry", "nspry", "nate123", "2000", "10");
+INSERT INTO user (first_name, last_name, username, password, budget, emergency) VALUES ("Nate2", "Spry", "nspry", "nate123", "3500", "10");
+INSERT INTO user (first_name, last_name, username, password, budget, emergency) VALUES ("Nate3", "Spry", "nspry", "nate123", "3000", "10");
 
-INSERT INTO cards_cash (card_name, spent_amount) VALUES ("American Express", 50);
-INSERT INTO cards_cash (card_name, spent_amount) VALUES ("Discover", 60);
-INSERT INTO cards_cash (card_name, spent_amount) VALUES ("Mastercard", 300);
-INSERT INTO cards_cash (card_name, spent_amount) VALUES ("Cash", 45);
+INSERT INTO expenses (name, category, amount_due, due_date, UserId) VALUES ("Drink", "Food", "200", "213131249141", "2");
+INSERT INTO expenses (name, category, amount_due, due_date, UserId) VALUES ("Eats", "Food", "100", "2131132131232", "2");
+INSERT INTO expenses (name, category, amount_due, due_date, UserId) VALUES ("Gas", "Utilities", "50", "1321315421412", "1");
 
-INSERT INTO emergency
--- A couple of ways we can handle this. We can have whenever the user puts in an available_amount in the available_money table, 15% (or some other percentage) is automatically removed and placed in emergency,
--- therefore, the available_amount will always be manipulated by the system. OR we can have the number on screen without removing from the table, alerting the user that this is a RECOMMENDED AMOUNT to not go under.
-
-INSERT INTO additional_income (addin_name, addin_amount) VALUES ("Birthday", 100);
-INSERT INTO additional_income (addin_name, addin_amount) VALUES ("DraftKings", 25);
--- These values should add automatically into available_money
-
-INSERT INTO bitcoin (current_value) VALUES (7065);
+INSERT INTO income (name, type, amount, UserId) VALUES ("VisaCredit", "Credit", "20000", "1");
+INSERT INTO income (name, type, amount, UserId) VALUES ("Wallet", "Cash", "100", "1");
+INSERT INTO income (name, type, amount, UserId) VALUES ("VisaDebit", "Debit", "5000", "2");

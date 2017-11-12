@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1,30]
       }
     },
-    catagory: {
+    category: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         isNumeric: true
       }
-    }
+    },
     due_date: {
       type: DataTypes.INTEGER,
       allowNull: false,

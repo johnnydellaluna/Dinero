@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        is: /^[a-zA-Z_-]*$/g,
+        is: /^[a-z_-]*$/i,
         len: [1,30]
       }
     },
@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        is: ["^[a-z]+$",'i'],
+        is: /^[a-zA-Z0-9_.-]*$/g,
         len: [1,20]
       }
     },
