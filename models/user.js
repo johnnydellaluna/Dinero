@@ -1,41 +1,65 @@
 module.exports = function(sequelize, DataTypes) {
+  var User = sequelize.define("User", {
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        is: /^[a-z]+$/i,
+        len: [1,30]
+      }
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        is: /^[a-z_-]*$/i,
+        len: [1,30]
+      }
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        is: /^[a-zA-Z0-9_.-]*$/g,
+        len: [1,20]
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1,20]
+      }
+    },
+    budget: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        isNumeric: true
+      }
+    },
+    emergency: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        isNumeric: true
+      }
+    }
+  }, {
+    timestamps: true,
+    freezeTableName: true
+  });
 
-// Creates a model that matches up with DB
-var User = sequelize.define("user", {
-  first_name: {
-    type: DataTypes.STRING
-  },
-  last_name: {
-    type: DataTypes.STRING
-  },
-  username: {
-    type: DataTypes.STRING
-  },
-  password: {
-    type: DataTypes.STRING
-  },
-  available_amount: {
-    type: DataTypes.INTEGER
-  },
-  emergency_amount: {
-    type: DataTypes.INTEGER
-  },
-  addin_name: {
-    type: DataTypes.STRING
-  },
-  addin_amount: {
-    type: DataTypes.INTEGER
-  },
-  fav_stock_name: {
-    type: DataTypes.STRING
-  },
-  fav_stock_current_value: {
-    type: DataTypes.INTEGER
-  }
-},{
-    timestamps: false
-});
-
-return User
-
+  User.associate = function(models) {
+    // Associating User with Expensess
+    // When an User is deleted, also delete any associated Expensess
+    User.hasMany(models.Income, {
+      onDelete: "cascade"
+    });
+    User.hasMany(models.Expenses, {
+      onDelete: "cascade"
+    });
+  };
+  return User;
 };
+// is: /^[a-zA-Z0-9_.-]*$/g,
