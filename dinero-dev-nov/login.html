@@ -38,19 +38,22 @@
             </div>
             <p>Discover the best budgeting app at your fingertips! <br />Login or create an account.</p>
             <form id="login-form" method="post">
-              <div class="form-group">
+               <div class="form-group">
+              <label for="login-email" class="label-custom">Email Address      </label>
+              <input id="login-email" type="email" name="loginEmail" required>
+              </div>
+             <!--  <div class="form-group">
                 <label for="login-username" class="label-custom">User Name</label>
                 <input id="login-username" type="text" name="loginUsername" required="">
-              </div>
+              </div> -->
               <div class="form-group">
                 <label for="login-password" class="label-custom">Password</label>
                 <input id="login-password" type="password" name="loginPassword" required="">
-              </div><a id="login" href="dashboard.html" class="btn btn-primary">Login</a>
+              </div>
+              <input id="login" type="submit" value="Login" class="btn btn-primary">
               <!-- This should be submit button but I replaced it with <a> for demo purposes-->
-            </form><a href="#" class="forgot-pass">Forgot Password?</a><small>Do not have an account? </small><a href="register.html" class="signup">Signup</a>
-          </div>
           <div class="copyrights text-center">
-              <p>Dinero &copy; 2017. All Rights Reserved. test</p>
+              <p>Dinero &copy; 2017. All Rights Reserved.</p>
           </div>
         </div>
       </div>

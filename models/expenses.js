@@ -24,10 +24,10 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     due_date: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isNumeric: true
+        len: [1,20]
       }
     }
   }, {
@@ -36,8 +36,6 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Expenses.associate = function(models) {
-    // We're saying that a Expenses should belong to an Author
-    // A Expenses can't be created without an Author due to the foreign key constraint
     Expenses.belongsTo(models.User, {
       foreignKey: {
         allowNull: false

@@ -1,10 +1,12 @@
 // Dependencies
 var express = require("express");
 var bodyParser = require("body-parser");
+var session = require("express-session");
+var passport = require("./config/passport");
 
 // Express App
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3036;
 
 // Models
 var db = require("./models");
@@ -18,8 +20,13 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Static Directory
 app.use(express.static("public"));
 
+// Passport
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Routes
-// require("./routes/html-routes.js")(app);
+require("./routes/html-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 require("./routes/expenses-api-routes.js")(app);
 require("./routes/income-api-routes.js")(app);

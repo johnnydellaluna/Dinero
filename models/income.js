@@ -29,8 +29,6 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Income.associate = function(models) {
-    // We're saying that a Income should belong to an Author
-    // A Income can't be created without an Author due to the foreign key constraint
     Income.belongsTo(models.User, {
       foreignKey: {
         allowNull: false

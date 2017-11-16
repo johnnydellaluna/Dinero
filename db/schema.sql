@@ -3,23 +3,28 @@ USE dinero_db;
 
 CREATE TABLE user
 (
-	first_name VARCHAR(20),
-	last_name VARCHAR (20),
+	id INTEGER NOT NULL AUTO_INCREMENT,
 	username VARCHAR (20),
+	email VARCHAR (30),
 	password VARCHAR (20),
-	available_amount INTEGER,
-	emergency_amount INTEGER,
-	addin_name VARCHAR(40),
-	addin_amount INTEGER,
-	fav_stock_name VARCHAR(20),
-	fav_stock_current_value INTEGER
+	budget INTEGER,
+	emergency INTEGER
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE income
+(
+	name VARCHAR(30),
+	type VARCHAR(30),
+	amount INTEGER,
+
+
 );
 
 CREATE TABLE expenses
 (
-	id INTEGER NOT NULL AUTO_INCREMENT,
-	card_name VARCHAR(30),
-	category_name VARCHAR (30),
-	spent_amount INTEGER,
-	PRIMARY KEY (id)
+	name VARCHAR (30),
+	category VARCHAR(20),
+	amount_due INTEGER,
+	due_date VARCHAR(30)
 );
