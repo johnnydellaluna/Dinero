@@ -14,8 +14,8 @@ $(document).ready(function() { // ****CURRENTLY ONLY MADE FOR USER 2****
     newTr.append(`<td> ${newExpense.category} </td>`);
     newTr.append(`<td> ${newExpense.due_date} </td>`);
     newTr.append(`<td class="text-right"> ${newExpense.amount_due} </td>`);
-    newTr.append(`<td><button class="editbtn"><span class="fa fa-cog" aria-hidden="true"></span></button></td>`);
-    newTr.append(`<td><button class="delbtn"><span class="fa fa-times-circle" aria-hidden="true"></span></button></td>`);
+    newTr.append(`<td class="text-center"><button class="editbtn btn btn-outline-success"><span class="fa fa-cog" aria-hidden="true"></span></button></td>`);
+    newTr.append(`<td class="text-center"><button class="delbtn btn btn-outline-success"><span class="fa fa-times-circle" aria-hidden="true"></span></button></td>`);
     return newTr;
   };
   function renderExpenseData(rows) { // Renders the rows inside of the array to the table.
@@ -132,4 +132,49 @@ $(document).ready(function() { // ****CURRENTLY ONLY MADE FOR USER 2****
     alert("A new category has been created!")
     $("#exp-category").prepend($(`<option> ${$("#exp-catInput").val().trim()} </option>`))
   });
+
+// =======
+// BUDGET
+// =======
+
+  // ***GETTING ALL INCOME FROM DATABASE TO FRONT END***
+    var userAmount = [];
+    var userValue;
+
+    function getIncome() {
+      $.get("/api/user/" + user, function(data) {
+        $("#inc-number").text(`$${data.budget}`);
+      });
+
+      // $.get("/api/income/" + user, function(data) {
+      //   for (var i = 0; i < data.length; i++) {
+      //     userAmount.push(data[i].amount);
+      //   };
+      //   return console.log(userAmount);
+      // })
+      // .done(function() {
+      //   if (userAmount.length > 1) {
+      //     function add(a, b) {
+      //       return a + b;
+      //     };
+      //     userValue = userAmount.reduce(add, 0);
+      //     return $("#inc-number").text(`$${userValue}`);
+      //   } else if (userAmount.length = 1) {
+      //     userValue = userAmount[0];
+      //     return $("#inc-number").text(`$${userValue}`);
+      //   } else if (userAmount.length <= 0) {
+      //     userValue = "You have no money";
+      //     return $("#inc-number").text(`$${userValue}`);
+      //   };
+      // });
+    };
+    getIncome();
+
+    $("#inc-button").on("click", function() {
+      event.preventDefault();
+      if (!$("#inc-valueInput").val() || !$.isNumeric($("#inc-valueInput").val())) {
+        return alert("Please input a numerical value.");
+      };
+      $("#inc-number").text(`$${$("#inc-valueInput").val()}`);
+    });
 });

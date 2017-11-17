@@ -250,11 +250,59 @@
           <div class="col-lg-6">
             <div class="card">
               <div class="card-header d-flex align-items-center">
-                <h2 class="h5 display">My Target Budget</h2>
+                <h2 class="h5 display">Budget</h2>
               </div>
               <div class="card-body">
-                <h1 class="display-4">$4,000.00</h1>
+                <h1 class="display-4" id="inc-number"></h1>
                 <h2 class="">Available Money</h2>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-outline-success btn-block" id="editBudgetInfo" data-toggle="modal" data-target="#modal_Income">Change your budget settings</button>
+
+                <!--  INCOME MODAL -->
+                <div class="modal fade" id="modal_Income" tabindex="-1" role="dialog" aria-labelledby="modal_Income"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Your Budget</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div><!-- end model-header -->
+                      <div class="modal-body">
+                        <div class="py-3">
+                          <div class="row">
+                            <div class="col-12  mx-auto">
+                              <div id="add-card" class="card">
+                                <div class="card-body">
+                                  <div class="card-title">
+                                    <h3 class="text-center">Change your budget</h3>
+                                  </div><!-- end card-title -->
+                                  <form action="" method="post" novalidate="novalidate">
+
+                                    <div class="form-group has-success">
+                                      <label for="inc-valueInput" class="control-label mb-1">Value</label>
+                                      <input id="inc-valueInput" name="inc-valueInput" type="text" class="form-control inc-valueInput valid" data-val-required="Please enter the name on card" autocomplete="inc-valueInput" aria-required="true" aria-invalid="false" aria-describedby="inc-valueInput-error">
+                                      <span class="help-block field-validation-valid" data-valmsg-for="inc-valueInput" data-valmsg-replace="true"></span>
+                                    </div>
+
+                                    <div>
+                                      <button id="inc-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                        <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                        <span id="payment-button-amount">Change</span>
+                                        <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                      </button>
+                                    </div>
+
+                                  </form>
+                                </div><!-- end card body -->
+                              </div><!-- end add card -->
+                            </div><!-- end col 12 -->
+                          </div><!-- end row -->
+                        </div><!-- end py-3 -->
+                      </div><!-- end modal body -->
+                    </div><!-- end modal content -->
+                  </div><!-- end modal dialog -->
+                </div><!-- end modal fade -->
               </div>
             </div>
           </div>
