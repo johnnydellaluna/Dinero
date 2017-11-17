@@ -18,7 +18,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static Directory
-app.use(express.static("public"));
+app.use(express.static("dinero-dev-nov"));
 
 // Passport
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));

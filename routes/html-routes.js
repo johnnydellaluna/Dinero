@@ -11,17 +11,17 @@ module.exports = function(app) {
   });
 
   app.get("/register", function(req, res) {
-    // If the user already has an account send them to the members page
+    // If the user already has an account send them to the dashboard
     if (req.user) {
-      res.redirect("/dashboard");
+      res.redirect("/dashboard.html");
     }
     res.sendFile(path.join(__dirname, "../dinero-dev-nov/register.html"));
   });
 
   app.get("/login", function(req, res) {
-    // If the user already has an account send them to the members page
+    // If the user already has an account send them to the dashboard
     if (req.user) {
-      res.redirect("/dashboard");
+      res.redirect("/dashboard.html");
     }
     res.sendFile(path.join(__dirname, "../dinero-dev-nov/login.html"));
   });

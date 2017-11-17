@@ -39,28 +39,28 @@ $(document).ready(function () {
     // ------------------------------------------------------- //
     // Login  form validation
     // ------------------------------------------------------ //
-    $('#login-form').validate({
-        messages: {
-            loginUsername: 'please enter your username',
-            loginPassword: 'please enter your password'
-        }
-    });
+    // $('#login-form').validate({
+    //     messages: {
+    //         loginUsername: 'please enter your username',
+    //         loginPassword: 'please enter your password'
+    //     }
+    // });
 
     // ------------------------------------------------------- //
     // Register form validation
     // ------------------------------------------------------ //
-    $('#register-form').validate({
-        messages: {
-            registerUsername: 'please enter your first name',
-            registerEmail: 'please enter a vaild Email Address',
-            registerPassword: 'please enter your password'
-        }
-    });
-    // go to dinero dashboard on submit
-    $('#register').click(function () {
-        location.href = "dashboard.html";
-        return false;
-    });
+    // $('#register-form').validate({
+    //     messages: {
+    //         registerUsername: 'please enter your first name',
+    //         registerEmail: 'please enter a vaild Email Address',
+    //         registerPassword: 'please enter your password'
+    //     }
+    // });
+    // // go to dinero dashboard on submit
+    // $('#register').click(function () {
+    //     location.href = "dashboard.html";
+    //     return false;
+    // });
 
     // ------------------------------------------------------- //
     // Transition Placeholders

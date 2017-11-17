@@ -34,32 +34,19 @@
       <div class="side-navbar-wrapper">
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <div class="sidenav-header-inner text-center"><img src="img/avatar-2.jpg" alt="user pic" class="img-fluid rounded-circle">
-            <h2 class="h5 text-uppercase">Johnny</h2><!--<span class="text-uppercase">Web Developer</span>-->
+            <h2 class="h5 text-uppercase"></h2><!--<span class="text-uppercase">Web Developer</span>-->
           </div>
           <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>Menu</strong></a></div>
         </div>
         <div class="main-menu">
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
             <li class="active"><a href="index.html"> <i class="icon-home"></i><span>Home</span></a></li>
-            <li> <a href="#"><i class="icon-screen"></i><span>Stats</span></a></li>
-            <li> <a href="#"><i class="icon-presentation"></i><span>Link3</span></a></li>
-            <li> <a href="#"> <i class="icon-grid"> </i><span>Link4  </span></a></li>
-            <li> <a href="#"> <i class="icon-interface-windows"></i><span>Link5 </span></a></li>
-            <li> <a href="#"> <i class="icon-mail"></i><span>Contacts</span>
-                <div class="badge badge-primary">Invite Friends!</div></a></li>
-          </ul>
-        </div>
-        <div id="adminMenu" class="admin-menu">
-          <ul id="side-admin-menu" class="side-menu list-unstyled"> 
-            <li> <a href="#pages-nav-list" data-toggle="collapse" aria-expanded="false"><i class="icon-interface-windows"></i><span>Settings</span>
-                <div class="arrow pull-right"><i class="fa fa-angle-down"></i></div></a>
-              <ul id="pages-nav-list" class="collapse list-unstyled">
-                <li> <a href="#">Page 1</a></li>
-                <li> <a href="#">Page 2</a></li>
-                <li> <a href="#">Page 3</a></li>
-                <li> <a href="#">Page 4</a></li>
-              </ul>
-            </li>
+            <li> <a href="#"><i class="icon-screen"></i><span>Expenses-Account</span></a></li>
+            <li> <a href="#"><i class="icon-screen"></i><span>Expenses-Category</span></a></li>
+            <li> <a href="#"><i class="icon-screen"></i><span>Emergency Fund</span></a></li>
+            <li> <a href="#"><i class="icon-screen"></i><span>Stocks and Trends</span></a></li>
+            <li> <a href="#"><i class="icon-screen"></i><span>Expenses by Month</span></a></li>
+            <li> <a href="#"> <i class="icon-grid"> </i><span>Settings</span></a></li>
           </ul>
         </div>
       </div>
@@ -130,6 +117,16 @@
         <div class="container-fluid">
           <header> 
             <h1 class="h3">Overview</h1>
+            <div class="col-lg-4">
+              <div class="card">
+                <div class="card-header d-flex align-items-center">
+                  <h2 class="h5 display">Available Money</h2>
+                </div>
+                <div class="card-body">
+                  <h1 class="display-4"></h1>
+                </div>
+              </div>
+            </div>
           </header>
           <div class="row">
             <div class="col-lg-6">
@@ -151,18 +148,18 @@
                         <tr>
                           <th scope="row">1</th>
                           <td><img src="img/icons/visa-curved-32px.png" class="rounded float-left" alt="..."></td>
-                          <td><span class="">Bank of America **** 5432</span></td>
-                          <td><span class="float-right">$2,900.33</span></td>
+                          <td><span class=""></span></td>
+                          <td><span class="float-right"></span></td>
                         </tr>
                         <th scope="row">2</th>
                         <td><img src="img/icons/mastercard-curved-32px.png" class="rounded float-left" alt="..."></td>
-                        <td><span class="">Wells Fargo **** 8867</span></td>
-                        <td><span class="float-right">$57.22</span></td>
+                        <td><span class=""></span></td>
+                        <td><span class="float-right"></span></td>
                         </tr>
                         <th scope="row">3</th>
                         <td><img src="img/icons/paypal-curved-32px.png" class="rounded float-left" alt="..."></td>
-                        <td><span class="">Paypal **** 0085</span></td>
-                        <td><span class="float-right">$1,126.33</span></td>
+                        <td><span class=""></span></td>
+                        <td><span class="float-right"></span></td>
                         </tr>
                       </tbody>
                     </table>
@@ -193,7 +190,7 @@
             <div class="col-lg-6">
               <div class="card pie-chart-example">
                 <div class="card-header d-flex align-items-center">
-                  <h2 class="h5 display">Additional Expenses</h2>
+                  <h2 class="h5 display">Expenses by Category</h2>
                 </div>
                 <div class="card-body">
                   <canvas id="pieChartExample"></canvas>
@@ -228,17 +225,6 @@
               </div>
             </div>
             <div class="col-lg-4">
-              <div class="card">
-                <div class="card-header d-flex align-items-center">
-                  <h2 class="h5 display">My Target Budget</h2>
-                </div>
-                <div class="card-body">
-                  <h1 class="display-4">$4,000.00</h1>
-                  <h2 class="">Available Money</h2>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
                 <div>
                   <!-- empty column for now -->
                 </div>
@@ -249,7 +235,8 @@
                   <h2 class="h5 display">Emergency Fund</h2>
                 </div>
                 <div class="card-body">
-                  <canvas id=""></canvas>
+                  <h1 class="display-4">$250</h1>
+                  <h2 class="display-4">x% of your budget</h2>
                 </div>
               </div>
             </div>
@@ -266,7 +253,7 @@
             <div class="col-lg-12">
               <div class="card bar-chart-example">
                 <div class="card-header d-flex align-items-center">
-                  <h2 class="h5 display">Expenses by Category</h2>
+                  <h2 class="h5 display">Expenses by Month</h2>
                 </div>
                 <div class="card-body">
                     <canvas id="barChartExample"></canvas>

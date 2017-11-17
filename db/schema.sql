@@ -7,8 +7,7 @@ CREATE TABLE user
 	username VARCHAR (20),
 	email VARCHAR (30),
 	password VARCHAR (20),
-	budget INTEGER,
-	emergency INTEGER
+	budget INTEGER
 	PRIMARY KEY (id)
 );
 

@@ -1,8 +1,8 @@
 USE dinero_db;
 
-INSERT INTO user (id, username, email, password, budget, emergency) VALUES ("1", "Nate", "Spry", "nspry", "nate123", "2000", "10");
-INSERT INTO user (id, username, email, password, budget, emergency) VALUES ("2", "Nate2", "Spry", "nspry", "nate123", "3500", "10");
-INSERT INTO user (id, username, email, password, budget, emergency) VALUES ("3", "Nate3", "Spry", "nspry", "nate123", "3000", "10");
+INSERT INTO user (id, username, email, password, budget) VALUES ("1", "Nate", "Spry", "nspry", "nate123", "2000");
+INSERT INTO user (id, username, email, password, budget) VALUES ("2", "Nate2", "Spry", "nspry", "nate123", "3500");
+INSERT INTO user (id, username, email, password, budget) VALUES ("3", "Nate3", "Spry", "nspry", "nate123", "3000");
 
 INSERT INTO income (name, type, amount) VALUES ("VisaCredit", "Credit", "20000");
 INSERT INTO income (name, type, amount) VALUES ("Wallet", "Cash", "100");

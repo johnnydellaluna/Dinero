@@ -4,21 +4,23 @@ module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
     id: {
       type: DataTypes.INTEGER,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false
     },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         is: /^[a-zA-Z0-9_.-]*$/g,
-        len: [1,20]
+        len: [1,40]
       }
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1,20]
+        len: [1,40]
       }
     },
     password: {
@@ -29,13 +31,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     budget: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        isNumeric: true
-      }
-    },
-    emergency: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {

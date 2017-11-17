@@ -11,10 +11,13 @@ module.exports = function(app) {
   app.post("/api/register", function(req, res) {
     console.log(req.body);
     db.User.create({
+      username: req.body.username,
       email: req.body.email,
-      password: req.body.password
-    }).then(function() {
+      password: req.body.password,
+      budget: req.body.budget
+    }).then(function(data) {
       res.redirect(307, "/api/login");
+      // res.json();
     }).catch(function(err) {
       console.log(err);
       res.json(err);
