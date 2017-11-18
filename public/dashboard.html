@@ -242,6 +242,67 @@
                     </div><!-- end modal content -->
                   </div><!-- end modal dialog -->
                 </div><!-- end modal fade -->
+
+                <!--  UPDATE MODAL -->
+                <div class="modal fade" id="modal_UpdateExp" tabindex="-1" role="dialog" aria-labelledby="modal_UpdateExp"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Expense</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div><!-- end model-header -->
+                      <div class="modal-body">
+                        <div class="py-3">
+                          <div class="row">
+                            <div class="col-12  mx-auto">
+                              <div id="add-card" class="card">
+                                <div class="card-body">
+                                  <div class="card-title">
+                                    <h3 class="text-center">Update an Expense</h3>
+                                  </div><!-- end card-title -->
+                                  <form action="" method="post" novalidate="novalidate">
+
+                                    <div class="form-group has-success">
+                                      <label for="exp-name-update" class="control-label mb-1">Expense Name</label>
+                                      <input id="exp-name-update" name="exp-name-update" type="text" class="form-control exp-name-update valid" data-val-required="Please enter the name on card" autocomplete="exp-name-update" aria-required="true" aria-invalid="false" aria-describedby="exp-name-update-error">
+                                      <span class="help-block field-validation-valid" data-valmsg-for="exp-name-update" data-valmsg-replace="true"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="exp-amount-update" class="control-label mb-1">Amount</label>
+                                      <input id="exp-amount-update" name="exp-amount-update" type="text" class="form-control" aria-required="true" aria-invalid="false" value="">
+                                    </div>
+
+                                    <div class="form-group" id="categoryFormGroup">
+                                      <label for="exp-category-update" class="control-label mb-1">Category</label>
+                                      <select class="form-control" id="exp-category-update"></select>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="exp-due-update" class="control-label mb-1">Due Date</label>
+                                      <input id="exp-due-update" name="exp-due-update" type="tel" class="form-control exp-due-update" value="" data-val="true" data-val-required="Please enter the card expiration" data-val-exp-due-update="Please enter a valid month and year" placeholder="MM / DD / YY" autocomplete="exp-due-update">
+                                      <span class="help-block" data-valmsg-for="exp-due-update" data-valmsg-replace="true"></span>
+                                    </div>
+
+                                    <div>
+                                      <button id="update-exp-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                        <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                        <span id="payment-button-amount">Update Expense</span>
+                                        <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                      </button>
+                                    </div>
+
+                                  </form>
+                                </div><!-- end card body -->
+                              </div><!-- end add card -->
+                            </div><!-- end col 12 -->
+                          </div><!-- end row -->
+                        </div><!-- end py-3 -->
+                      </div><!-- end modal body -->
+                    </div><!-- end modal content -->
+                  </div><!-- end modal dialog -->
+                </div><!-- end modal fade -->
               </div><!-- end card body -->
             </div><!-- end card -->
           </div><!-- end col-lg-6 -->

@@ -14,7 +14,7 @@ $(document).ready(function() { // ****CURRENTLY ONLY MADE FOR USER 2****
     newTr.append(`<td> ${newExpense.category} </td>`);
     newTr.append(`<td> ${newExpense.due_date} </td>`);
     newTr.append(`<td class="text-right"> ${newExpense.amount_due} </td>`);
-    newTr.append(`<td class="text-center"><button class="editbtn btn btn-outline-success"><span class="fa fa-cog" aria-hidden="true"></span></button></td>`);
+    newTr.append(`<td class="text-center"><button class="editbtn btn btn-outline-success" data-toggle="modal" data-target="#modal_UpdateExp"><span class="fa fa-cog" aria-hidden="true"></span></button></td>`);
     newTr.append(`<td class="text-center"><button class="delbtn btn btn-outline-success"><span class="fa fa-times-circle" aria-hidden="true"></span></button></td>`);
     return newTr;
   };
@@ -69,10 +69,15 @@ $(document).ready(function() { // ****CURRENTLY ONLY MADE FOR USER 2****
   };
 
   // ***UPDATING EXPENSES ON FRONT END AND DATABASE***
+  var dataToUpdate;
   $(document).on("click", ".editbtn", function() {
-    console.log($(this).parent("td").parent("tr").data("expense"));
+    dataToUpdate = $(this).parent("td").parent("tr").data("expense");
+    console.log(dataToUpdate);
   });
 
+  $("#update-exp-button").on("click", function() {
+    event.preventDefault();
+  });
   // ***DELETING EXPENSES ON FRONT END AND DATABASE***
   $(document).on("click", ".delbtn", function() {
     console.log($(this).parent("td").parent("tr").data("expense"));
@@ -119,8 +124,8 @@ $(document).ready(function() { // ****CURRENTLY ONLY MADE FOR USER 2****
   // ADD TEMPORARY CATEGORY
   $("#exp-category").change(function() { // CHECKING FOR ADD CATEGORY OPTION
     if ($("#exp-category option:selected")[0].text === "+ Add a Category") {
-      $("#categoryFormGroup").append('<input id="exp-catInput" name="exp-catInput" type="text" class="form-control exp-catInput valid" data-val-required="Please enter the name on card" autocomplete="exp-catInput" aria-required="true" aria-invalid="false" aria-describedby="exp-catInput-error" placeholder="Please type the Category here">');
-      $("#categoryFormGroup").append('<button id="exp-catInputSubmit" type="submit" class="btn btn-lg btn-info btn-block"> Add Category </button>');
+      $("#categoryFormGroup").append('<input style="margin-top: 10px;" id="exp-catInput" name="exp-catInput" type="text" class="form-control exp-catInput valid" data-val-required="Please enter the name on card" autocomplete="exp-catInput" aria-required="true" aria-invalid="false" aria-describedby="exp-catInput-error" placeholder="Please type the Category here">');
+      $("#categoryFormGroup").append('<button style="margin-top: 10px;" id="exp-catInputSubmit" type="submit" class="btn btn-lg btn-info btn-block"> Add Category </button>');
     } else {
       $("#exp-catInput").remove();
       $("#exp-catInputSubmit").remove();
