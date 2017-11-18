@@ -67,7 +67,7 @@ module.exports = function(app) {
                 res.json(dbExpenses);
             });
     });
-    // ALL EXPENSES BY USER AND OREDERED BY CATEGORY
+    // ALL EXPENSES BY USER AND ORDERED BY CATEGORY
     app.get("/api/expenses/:UserId/:category", function(req, res) {
         db.Expenses
             .findAll({
@@ -81,7 +81,7 @@ module.exports = function(app) {
                 res.json(dbExpenses);
             });
     });
-    // ALL EXPENSES BY USER AND OREDERED BY AMOUNT
+    // ALL EXPENSES BY USER AND ORDERED BY AMOUNT
     app.get("/api/expenses/:UserId/:amount_due", function(req, res) {
         db.Expenses
             .findAll({
@@ -99,7 +99,7 @@ module.exports = function(app) {
                 res.json(dbExpenses);
             });
     });
-    // ALL EXPENSES BY USER AND OREDERED BY DATE
+    // ALL EXPENSES BY USER AND ORDERED BY DATE
     app.get("/api/expenses/:UserId/:due_date", function(req, res) {
         db.Expenses
             .findAll({
