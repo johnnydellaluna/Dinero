@@ -1,6 +1,5 @@
 # Dinero
 
-Dinero
 Dinero is a budgeting application intended to highlight your current spending habits and, with this visual aide, spotlight where you need to build better habits.
 ---
 ## Sign In or Make An Account
