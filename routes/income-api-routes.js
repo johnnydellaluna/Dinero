@@ -69,5 +69,44 @@ module.exports = function(app) {
     });
   });
   // ALL INCOME BY USER AND OREDERED BY TYPE
+    app.get("/api/income/:UserId/:type", function(req, res) {
+    db.Income
+    .findAll({
+      where: {
+        UserId: req.params.UserId,
+        id: req.params.id,
+        type: req.params.type
+
+      },
+      include: [db.User],
+      order: [
+            ["type", "DESC"]
+        ]
+
+    })
+    .then(function(dbIncome) {
+      res.json(dbIncome);
+    });
+  });
+
   // ALL INCOME BY USER AND OREDERED BY AMOUNT
+  app.get("/api/income/:UserId/:amount", function(req, res) {
+    db.Income
+    .findAll({
+      where: {
+        UserId: req.params.UserId,
+        id: req.params.id,
+        amount: req.params.amount
+
+      },
+      include: [db.User],
+      order: [
+            ["amount", "DESC"]
+        ]
+
+    })
+    .then(function(dbIncome) {
+      res.json(dbIncome);
+    });
+  });
 };
