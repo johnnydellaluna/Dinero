@@ -4,13 +4,13 @@ var nightmare = Nightmare({ show: true });
 
 nightmare
 // Add in Heroku links
-  .goto("/login")
+  .goto("http://localhost:3036/register")
   .type("input#register-username", "jimmyneutron")
   .type("input#register-email", "jimmy@thelab.com")
   .type("input#register-password", "goddard")
   .type("input#register-budget", "10000")
   .click("#register-button")
-  .goto("/dashboard")
+  .goto("http://localhost:3036/dashboard")
   .evaluate(function() {
     return document.querySelector(".main-menu");
   })
